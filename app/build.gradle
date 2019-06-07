@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -12,6 +13,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,10 +31,24 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation Dependencies.kotlinStandardLibrary
+
     implementation Dependencies.appCompat
     implementation Dependencies.coreKtx
+    implementation Dependencies.viewModel
+    implementation Dependencies.room
+    kapt Dependencies.roomCompiler
+    implementation Dependencies.roomKtx
 
-    implementation Dependencies.arrowCoreData
+    implementation Dependencies.dagger
+    kapt Dependencies.daggerCompiler
+
+    implementation Dependencies.okHttp
+
+    implementation Dependencies.moshi
+    kapt Dependencies.moshiKotlinCodegen
+
+    implementation Dependencies.retrofit
+    kapt Dependencies.retrofitMoshiAdapter
 
     testImplementation Dependencies.jUnit
     androidTestImplementation Dependencies.testRunner
