@@ -36,6 +36,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation Dependencies.kotlinStandardLibrary
+    implementation Dependencies.kotlinCoroutines
+    implementation Dependencies.kotlinCoroutinesAndroid
 
     implementation Dependencies.appCompat
     implementation Dependencies.coreKtx
@@ -53,7 +55,7 @@ dependencies {
     kapt Dependencies.moshiKotlinCodegen
 
     implementation Dependencies.retrofit
-    kapt Dependencies.retrofitMoshiAdapter
+    implementation Dependencies.retrofitMoshiAdapter
 
     testImplementation Dependencies.jUnit
     androidTestImplementation Dependencies.testRunner

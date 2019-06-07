@@ -4,6 +4,7 @@ object Versions {
 
     // Kotlin
     const val kotlin = "1.3.31"
+    const val kotlinCoroutines = "1.3.0-M1"
 
     // Android X
     const val appCompat = "1.0.2"
