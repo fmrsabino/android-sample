@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+apply from: '../helpers.gradle'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -12,6 +14,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // TODO API Key in secure place
+        buildConfigField "String", "API_KEY", getKey("API_KEY")
     }
 
     compileOptions {
