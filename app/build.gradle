@@ -16,7 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // TODO API Key in secure place
-        buildConfigField "String", "API_KEY", getKey("API_KEY")
+        buildConfigField "String", "API_KEY", getKey("API_KEY", "")
     }
 
     compileOptions {
